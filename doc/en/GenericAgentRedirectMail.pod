@@ -1,0 +1,26 @@
+=head1 NAME
+
+GenericAgentRedirectMail
+
+=head1 DESCRIPTION
+
+This is a module to redirect the initial mail to any other recipient.
+
+Use case: Send the mail to an account, the anti-spam software uses to learn.
+
+Create a GenericAgent job, give it a name and select minute "5", all hours and Monday to Friday in the time based trigger. In the ticket filter, you have to
+use the queue with the value "Junk". Insert I<Kernel::System::GenericAgent::RedirectMail> in the "Custom module" field. In the parameterlist, you have to
+provide a key "To" and an email address, and a "From" as well....
+
+You can use a static mail address or a I<E<lt>OTRS_TICKET_...E<gt>> placeholder.
+
+=head1 REPOSITORY AND BUGTRACKER
+
+The code repository and a bugtracker is available at
+L<http://github.com/reneeb/otrs-GenericAgentRedirectMail>.
+
+=head1 AUTHOR AND LICENSE
+
+This addon is licensed under the terms of AGPL 3.
+
+Renee Baecker, C<< <info@perl-services.de> >>
